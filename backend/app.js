@@ -6,6 +6,7 @@ const app = express();
 import connectDB from "./database/connect.js";
 import contactRoute from "./routes/contacts.js";
 
+app.use(express.json());
 app.get("/", (req, res) => {
   res.send("hello");
 });
