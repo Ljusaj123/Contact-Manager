@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 
-app.use("/api/v1", numberRoute);
+app.use("/api/v1/numbers", numberRoute);
 
 const start = async () => {
   await connectDB(process.env.MONGO_URI);
