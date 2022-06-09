@@ -6,18 +6,25 @@ const ErroHandlerMiddleware = (error, req, res, next) => {
     message: error.message || "Something went wrong, try again",
   };
 
-  if (err.name == "CastError") {
-    CustomError.msg = `Provided id ${err.value._id} is not in correct form `;
-    CustomError.statusCode = StatusCodes.NOT_FOUND;
-  }
-  if (err.name === "ValidationError") {
-    CustomError.msg = Object.values(err.errors)
-      .map((item) => item.message)
-      .join(",");
-    CustomError.statusCode = StatusCodes.NOT_FOUND;
+  if (error.code && error.code === 11000) {
+    CustomError.message = `Duplicate value entered for ${Object.keys(
+      error.keyValue
+    )} field, please choose another value`;
+    CustomError.code = StatusCodes.BAD_REQUEST;
   }
 
-  res.status(CustomError.statusCode).send({ msg: CustomError.message });
+  if (error.name == "CastError") {
+    CustomError.message = `Provided id ${error.value._id} is not in correct form `;
+    CustomError.code = StatusCodes.NOT_FOUND;
+  }
+  if (error.name === "ValidationError") {
+    CustomError.message = Object.values(error.errors)
+      .map((item) => item.message)
+      .join(",");
+    CustomError.code = StatusCodes.NOT_FOUND;
+  }
+
+  res.status(CustomError.code).send({ msg: CustomError.message });
 };
 
 export default ErroHandlerMiddleware;
