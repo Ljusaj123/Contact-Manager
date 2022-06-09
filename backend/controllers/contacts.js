@@ -1,5 +1,6 @@
 import Contact from "../models/Contact.js";
 import { StatusCodes } from "http-status-codes";
+import { BadRequest } from "../errors/CustomErrors.js";
 
 export const getAllContacts = async (req, res, next) => {
   const allContacts = await Contact.find({});
@@ -11,11 +12,11 @@ export const getContact = async (req, res, next) => {
 
     const contact = await Contact.findById(contactID);
     if (!contact) {
-      throw new Error(`contact does not exist with id ${contactID}`);
+      throw new BadRequest(`contact does not exist with id ${contactID}`);
     }
     res.status(StatusCodes.OK).json({ contact });
   } catch (error) {
-    res.status(400).send(error.message);
+    next(error);
   }
 };
 export const deleteContact = async (req, res, next) => {
@@ -24,11 +25,11 @@ export const deleteContact = async (req, res, next) => {
 
     const contact = await Contact.findByIdAndRemove(contactID);
     if (!contact) {
-      throw new Error(`contact does not exist with id ${contactID}`);
+      throw new BadRequest(`contact does not exist with id ${contactID}`);
     }
     res.status(StatusCodes.OK).json(`contact with id ${contactID} is deleted`);
   } catch (error) {
-    res.status(400).send(error.message);
+    next(error);
   }
 };
 export const updateContact = async (req, res, next) => {
@@ -40,11 +41,11 @@ export const updateContact = async (req, res, next) => {
       { new: true, runValidators: true }
     );
     if (!contact) {
-      throw new Error(`contact does not exist with id ${contactID}`);
+      throw new BadRequest(`contact does not exist with id ${contactID}`);
     }
     res.status(StatusCodes.OK).json({ contact });
   } catch (error) {
-    res.status(400).send(error.message);
+    next(error);
   }
 };
 export const createContact = async (req, res, next) => {
@@ -53,6 +54,6 @@ export const createContact = async (req, res, next) => {
     const contact = await newContact.save();
     res.status(StatusCodes.CREATED).json({ contact });
   } catch (error) {
-    res.status(400).send(error.message);
+    next(error);
   }
 };
