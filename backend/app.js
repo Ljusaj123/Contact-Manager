@@ -4,13 +4,13 @@ dotenv.config();
 
 const app = express();
 import connectDB from "./database/connect.js";
-import numberRoute from "./routes/mobile_numbers.js";
+import contactRoute from "./routes/contacts.js";
 
 app.get("/", (req, res) => {
   res.send("hello");
 });
 
-app.use("/api/v1/numbers", numberRoute);
+app.use("/api/v1/contacts", contactRoute);
 
 const start = async () => {
   await connectDB(process.env.MONGO_URI);
