@@ -1,6 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 
 const ErroHandlerMiddleware = (error, req, res, next) => {
+  console.log(error);
   let CustomError = {
     code: error.statusCode || StatusCodes.INTERNAL_SERVER_ERROR,
     message: error.message || "Something went wrong, try again",
@@ -14,8 +15,13 @@ const ErroHandlerMiddleware = (error, req, res, next) => {
   }
 
   if (error.name == "CastError") {
-    CustomError.message = `Provided id ${error.value._id} is not in correct form `;
-    CustomError.code = StatusCodes.NOT_FOUND;
+    if (error.kind === "ObjectId") {
+      CustomError.message = `Provided id ${error.value} is not in correct form `;
+      CustomError.code = StatusCodes.NOT_FOUND;
+    } else {
+      CustomError.message = `Paramethers are not in correct form`;
+      CustomError.code = StatusCodes.BAD_REQUEST;
+    }
   }
   if (error.name === "ValidationError") {
     CustomError.message = Object.values(error.errors)
