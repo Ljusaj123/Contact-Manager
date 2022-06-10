@@ -12,11 +12,11 @@
 
   &-container {
     height: 100%;
-    @include universal-flex-design(space-evenly, center);
+    @include universal-flex-display(space-evenly, center);
     cursor: pointer;
 
     .img-container {
-      @include universal-flex-design(center, center);
+      @include universal-flex-display(center, center);
       height: 15vh;
 
       svg {
