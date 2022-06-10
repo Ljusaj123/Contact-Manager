@@ -1,15 +1,21 @@
 .home {
   width: 100vw;
   max-width: 100%;
-  min-height: 100vh;
-  padding: 1rem;
+  padding: 1rem 0;
 
   &-container {
     width: clamp(300px, 90%, 1000px);
+    min-height: 100vh;
+    max-height: 150vh;
     margin: 0 auto;
-    height: 100vh;
+    background-color: $medium-grey;
     border: 2px solid $ash-white;
     border-radius: 15px;
-    background-color: $medium-grey;
+    position: relative;
+
+    .container {
+      width: clamp(270px, 80%, 700px);
+      margin: 0 auto;
+    }
   }
 }
