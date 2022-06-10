@@ -1,10 +1,20 @@
-
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Contact from "./pages/Contact.js";
+import Home from "./pages/Home.js";
+import NotFound from "./pages/NotFound.js";
+import "./styles/css/styles.css";
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
