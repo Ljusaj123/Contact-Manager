@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <div className="header-container">
-        <BiUserPlus />
+        <BiUserPlus className="new-user-icon" />
         <h1>Contact Manager</h1>
         <input type="text" placeholder="Search" />
       </div>
