@@ -1,0 +1,15 @@
+.home {
+  width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+
+  &-container {
+    width: clamp(300px, 90%, 1000px);
+    margin: 0 auto;
+    height: 100vh;
+    border: 2px solid $ash-white;
+    border-radius: 15px;
+    background-color: $medium-grey;
+  }
+}
