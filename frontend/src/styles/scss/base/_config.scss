@@ -29,22 +29,25 @@ p {
 
 h1 {
   font-size: $fs-h1;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
+}
+
+h2,
+h3,
+p {
+  margin: 0.5rem 0;
 }
 
 h2 {
   font-size: $fs-h2;
-  margin: 1rem 0;
 }
 
 h3 {
   font-size: $fs-h3;
-  margin: 1rem 0;
 }
 
 p {
   font-size: $fs-p;
-  margin: 0.5rem 0;
 }
 
 a {
