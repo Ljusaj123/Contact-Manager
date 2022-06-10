@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Tienne:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Joan&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #eeeeee;
+  background-color: #222831;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Tienne", serif;
+}
+
+p,
+a {
+  font-family: "Joan", serif;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 6rem);
+  margin: 2rem 0;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  margin: 1rem 0;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  margin: 1rem 0;
+}
+
+p {
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  margin: 0.5rem 0;
+}
+
+a {
+  text-decoration: none;
+}

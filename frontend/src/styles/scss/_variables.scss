@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Tienne:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Joan&display=swap");
+
+$dark-grey: rgb(34, 40, 49);
+$lighter-grey: rgb(57, 62, 70);
+$orange: rgb(253, 112, 20);
+$clean-white: rgb(238, 238, 238);
+
+$ff-heading: "Tienne", serif;
+$ff-body: "Joan", serif;
+
+$fs-h1: clamp(3rem, 5vw, 6rem);
+$fs-h2: clamp(1.5rem, 5vw, 2.5rem);
+$fs-h3: clamp(1.2rem, 5vw, 2rem);
+$fs-p: clamp(0.8rem, 3vw, 1.5rem);
