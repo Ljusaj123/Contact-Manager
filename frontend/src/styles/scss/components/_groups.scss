@@ -1,0 +1,13 @@
+.groups {
+  height: 15vh;
+  padding: 1rem;
+
+  &-container {
+    @include universal-flex-display(space-between, center);
+
+    svg {
+      font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+      cursor: pointer;
+    }
+  }
+}
