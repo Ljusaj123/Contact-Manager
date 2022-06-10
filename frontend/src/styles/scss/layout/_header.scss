@@ -1,27 +1,17 @@
 header {
   width: 100%;
-  height: fit-content;
   padding: 1rem;
 }
 
 .header-container {
-  width: 100%;
-  height: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-
-  &::after {
-    content: "";
-    width: 80%;
-    height: 2px;
-    margin: 0 auto;
-    position: absolute;
-    bottom: -5rem;
-    background-color: $ash-white;
-  }
+  margin: 0 auto;
+  padding-bottom: 5em;
+  border-bottom: 1px solid $ash-white;
 
   input {
     padding: 0.7em;
