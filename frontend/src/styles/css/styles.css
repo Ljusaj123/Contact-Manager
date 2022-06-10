@@ -61,53 +61,58 @@ a {
 .home {
   width: 100vw;
   max-width: 100%;
-  min-height: 100vh;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .home-container {
   width: clamp(300px, 90%, 1000px);
+  min-height: 100vh;
+  max-height: 150vh;
   margin: 0 auto;
-  height: 100vh;
+  background-color: #222831;
   border: 2px solid rgba(235, 225, 225, 0.432);
   border-radius: 15px;
-  background-color: #222831;
+  position: relative;
+}
+
+.home-container .container {
+  width: clamp(270px, 80%, 700px);
+  margin: 0 auto;
 }
 
 header {
   width: 100%;
   padding: 1rem;
+  border-bottom: 1px solid rgba(235, 225, 225, 0.432);
 }
 
 .header-container {
-  width: 90%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0 auto;
-  padding-bottom: 5em;
-  border-bottom: 1px solid rgba(235, 225, 225, 0.432);
 }
 
 .header-container input {
-  padding: 0.7em;
-  line-height: 1.5rem;
-  width: clamp(200px, 50%, 500px);
+  width: clamp(200px, 70%, 500px);
   border: none;
-  outline: none;
-  color: #393e46;
   border-radius: 10px;
+  outline: none;
+  line-height: 1.5rem;
+  color: #393e46;
   font-size: clamp(0.8rem, 2vw, 1.2rem);
+  margin: 2em 0;
+  padding: 0.7em;
 }
 
 .header-container input::-webkit-input-placeholder {
@@ -132,4 +137,110 @@ header {
 
 .header-container [placeholder]:focus::-webkit-input-placeholder {
   color: transparent;
+}
+
+.header-container .new-user-icon {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border: 2px solid #fd7014;
+  border-radius: 50%;
+  padding: 0.2em;
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  color: #fd7014;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.header-container .new-user-icon:active {
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+}
+
+.contact-list {
+  padding: 2rem 0;
+}
+
+.contact-list-container {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.contact-list-container::-webkit-scrollbar {
+  width: 0.5rem;
+  background: rgba(235, 225, 225, 0.432);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.contact-list-container::-webkit-scrollbar-thumb {
+  background-color: rgba(235, 225, 225, 0.432);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.contact {
+  width: 90%;
+  min-height: 15vh;
+  margin: 2rem auto;
+  border: 1px solid rgba(235, 225, 225, 0.432);
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.contact:hover {
+  background-color: #393e46;
+}
+
+.contact-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.contact-container .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15vh;
+}
+
+.contact-container .img-container svg {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+}
+
+.groups {
+  height: 15vh;
+  padding: 1rem;
+}
+
+.groups-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.groups-container svg {
+  font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+  cursor: pointer;
 }
