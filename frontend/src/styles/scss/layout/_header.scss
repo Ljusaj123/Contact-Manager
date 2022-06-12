@@ -3,11 +3,11 @@ header {
   padding: 1rem;
   border-bottom: 1px solid $ash-white;
 }
-.header-container {
-  width: 100%;
-  @include universal-flex-display(center, center);
-  flex-direction: column;
 
+form {
+  width: 100%;
+
+  @include universal-flex-display(center, center);
   input {
     width: clamp(200px, 70%, 500px);
     border: none;
@@ -25,22 +25,5 @@ header {
   }
   [placeholder]:focus::-webkit-input-placeholder {
     color: transparent;
-  }
-
-  .new-user-icon {
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    border: 2px solid $orange;
-    border-radius: 50%;
-    padding: 0.2em;
-    font-size: clamp(2rem, 5.5vw, 4rem);
-    color: $orange;
-    cursor: pointer;
-    transition: all 0.5s ease;
-
-    &:active {
-      transform: scale(0.85);
-    }
   }
 }
