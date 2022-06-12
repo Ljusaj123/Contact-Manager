@@ -1,14 +1,14 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 
-function Contact() {
+function Contact({ props }) {
   return (
     <div className="contact">
       <div className="contact-container">
         <div className="img-container">
-          <FaUserCircle />
+          <FaUserCircle className="user-icon" />
         </div>
-        <p className="contact-name">Sara Ljušaj</p>
+        <p className="contact-name">{props.name}</p>
       </div>
     </div>
   );
