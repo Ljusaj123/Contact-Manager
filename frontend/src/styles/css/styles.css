@@ -47,7 +47,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1.2rem, 5vw, 2rem);
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
 }
 
 p {
@@ -80,14 +80,9 @@ a {
   margin: 0 auto;
 }
 
-header {
-  width: 100%;
-  padding: 1rem;
-  border-bottom: 1px solid rgba(235, 225, 225, 0.432);
-}
-
-.header-container {
-  width: 100%;
+.not-found {
+  height: 100vh;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,7 +98,150 @@ header {
           flex-direction: column;
 }
 
-.header-container input {
+.not-found .back-btn {
+  margin-top: 3rem;
+  width: clamp(200px, 70%, 350px);
+  color: #eeeeee;
+  background: none;
+  border: none;
+  background-color: #fd7014;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: clamp(1rem, 5.5vw, 1.3rem);
+}
+
+.not-found .back-btn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.contact-page {
+  width: 100vw;
+  max-width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem 0;
+}
+
+.contact-page-container {
+  width: clamp(300px, 90%, 1000px);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: #222831;
+  border: 2px solid rgba(235, 225, 225, 0.432);
+  border-radius: 15px;
+  position: relative;
+}
+
+.contact-page-container .container {
+  width: clamp(270px, 80%, 700px);
+  margin: 0 auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 120vh;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-page-container .container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contact-page-container .container div {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-page-container .container div p {
+  margin-left: 1em;
+}
+
+.contact-page-container .container .button-container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-page-container .container .image-name-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(235, 225, 225, 0.432);
+}
+
+.contact-page-container .container .email-container,
+.contact-page-container .container .number-container,
+.contact-page-container .container .address-container,
+.contact-page-container .container .tag-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header {
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(235, 225, 225, 0.432);
+}
+
+form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form input {
   width: clamp(200px, 70%, 500px);
   border: none;
   border-radius: 10px;
@@ -115,47 +253,28 @@ header {
   padding: 0.7em;
 }
 
-.header-container input::-webkit-input-placeholder {
+form input::-webkit-input-placeholder {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-.header-container input:-ms-input-placeholder {
+form input:-ms-input-placeholder {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-.header-container input::-ms-input-placeholder {
+form input::-ms-input-placeholder {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-.header-container input::placeholder {
+form input::placeholder {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-.header-container [placeholder]:focus::-webkit-input-placeholder {
+form [placeholder]:focus::-webkit-input-placeholder {
   color: transparent;
-}
-
-.header-container .new-user-icon {
-  position: absolute;
-  top: 2%;
-  right: 2%;
-  border: 2px solid #fd7014;
-  border-radius: 50%;
-  padding: 0.2em;
-  font-size: clamp(2rem, 5.5vw, 4rem);
-  color: #fd7014;
-  cursor: pointer;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.header-container .new-user-icon:active {
-  -webkit-transform: scale(0.85);
-          transform: scale(0.85);
 }
 
 .contact-list {
@@ -219,10 +338,6 @@ header {
   height: 15vh;
 }
 
-.contact-container .img-container svg {
-  font-size: clamp(2rem, 5.5vw, 3.5rem);
-}
-
 .groups {
   height: 15vh;
   padding: 1rem;
@@ -240,7 +355,43 @@ header {
           align-items: center;
 }
 
-.groups-container svg {
-  font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+svg {
   cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.user-icon {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+}
+
+.user-info-icon {
+  font-size: clamp(4rem, 5.5vw, 6rem);
+}
+
+.button-icon {
+  font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+}
+
+.button-icon:hover {
+  color: #fd7014;
+}
+
+.create-user-icon {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border: 2px solid #fd7014;
+  border-radius: 50%;
+  padding: 0.2em;
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  color: #fd7014;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.create-user-icon:active {
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
 }
