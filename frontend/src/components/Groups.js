@@ -1,16 +1,16 @@
 import React from "react";
 import { BiStar, BiGroup, BiUser } from "react-icons/bi";
 
-function Nesto() {
+function Groups() {
   return (
     <div className="groups">
       <div className="groups-container">
-        <BiUser />
-        <BiStar />
-        <BiGroup />
+        <BiUser className="button-icon" />
+        <BiStar className="button-icon" />
+        <BiGroup className="button-icon" />
       </div>
     </div>
   );
 }
 
-export default Nesto;
+export default Groups;
