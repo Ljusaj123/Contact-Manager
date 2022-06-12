@@ -1,0 +1,35 @@
+svg {
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.user-icon {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+}
+.user-info-icon {
+  font-size: clamp(4rem, 5.5vw, 6rem);
+}
+
+.button-icon {
+  font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+  &:hover {
+    color: $orange;
+  }
+}
+
+.create-user-icon {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border: 2px solid $orange;
+  border-radius: 50%;
+  padding: 0.2em;
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  color: $orange;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &:active {
+    transform: scale(0.85);
+  }
+}
