@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
+import cors from "cors";
 
 const app = express();
 import connectDB from "./database/connect.js";
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(express.json());
+app.use(cors());
 app.use("/api/v1/contacts", contactRoute);
 app.use(ErrorHandlerMiddleware);
 app.use(NotFoundMiddleware);
