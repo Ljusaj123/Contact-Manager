@@ -9,3 +9,9 @@
   grid-template-columns: $columns;
   gap: $gap;
 }
+
+@mixin media-450 {
+  @media screen and (max-width: 450px) {
+    @content;
+  }
+}
