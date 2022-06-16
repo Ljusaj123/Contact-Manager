@@ -25,41 +25,34 @@
 
       & > div {
         display: flex;
-        // flex-grow: 1;
-        flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
-      }
-
-      div {
-        height: fit-content;
-        min-height: 15vh;
-        display: flex;
-
-        justify-content: space-between;
-
-        p {
-          margin-left: 1em;
-        }
+        min-height: 20vh;
+        padding: 1rem;
       }
 
       .button-container {
         flex-direction: row;
         align-items: center;
       }
+
       .image-name-container {
+        flex-direction: column;
         align-items: center;
         border-bottom: 1px solid $ash-white;
       }
+    }
+  }
+}
 
-      .email-container,
-      .number-container,
-      .address-container,
-      .tag-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-      }
+@include media-450 {
+  .contact-page .contact-page-container .container {
+    & > div {
+      flex-direction: column;
+      min-height: 10vh;
+    }
+    .button-container {
+      flex-direction: row;
+      align-items: center;
     }
   }
 }
