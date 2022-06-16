@@ -1,0 +1,17 @@
+.error-page {
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+
+  &-container {
+    height: 100%;
+    width: 100%;
+    @include universal-flex-display(center, center);
+    flex-direction: column;
+
+    a {
+      width: 100%;
+      @include universal-flex-display(center, center);
+    }
+  }
+}
