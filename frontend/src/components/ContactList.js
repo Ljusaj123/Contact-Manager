@@ -2,6 +2,9 @@ import React from "react";
 import Contact from "./Contact";
 import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch.js";
+import "react-spinner-animated/dist/index.css";
+import { HalfMalf } from "react-spinner-animated";
+import ErrorPage from "../pages/ErrorPage.js";
 
 function ContactList() {
   const { data, isLoading, error } = useFetch(
@@ -9,11 +12,18 @@ function ContactList() {
   );
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <HalfMalf
+        text={"Loading..."}
+        bgColor={"#393e4b"}
+        width={"150px"}
+        height={"150px"}
+      />
+    );
   }
 
   if (error) {
-    return <p>Error....</p>;
+    return <ErrorPage error={error} />;
   }
 
   return (
