@@ -2,6 +2,10 @@ svg {
   cursor: pointer;
   transition: all 0.5s ease;
 }
+.error-icon {
+  font-size: clamp(6rem, 6.5vw, 11rem);
+  color: $orange;
+}
 
 .user-icon {
   font-size: clamp(2rem, 5.5vw, 3.5rem);
