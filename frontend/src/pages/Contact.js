@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import { MdFavoriteBorder } from "react-icons/md";
 import { BsPencil } from "react-icons/bs";
@@ -8,15 +8,27 @@ import useFetch from "../hooks/useFetch.js";
 import ErrorPage from "./ErrorPage.js";
 import "react-spinner-animated/dist/index.css";
 import { HalfMalf } from "react-spinner-animated";
+import DeleteContact from "../utils/DeleteContact.js";
+import InfoPage from "./SuccessPage.js";
 
 function Contact() {
   const { id } = useParams();
+  const [deleted, setDeleted] = useState(false);
+  const [message, setMessage] = useState("");
 
   const {
     data: user,
     isLoading,
     error,
   } = useFetch(`http://localhost:6001/api/v1/contacts/${id}`);
+
+  const handleDelete = async () => {
+    const message = await DeleteContact(
+      `http://localhost:6001/api/v1/contacts/${id}`
+    );
+    setDeleted(true);
+    setMessage(message);
+  };
   if (isLoading) {
     return (
       <HalfMalf
@@ -31,17 +43,19 @@ function Contact() {
   if (error) {
     return <ErrorPage error={error} />;
   }
+  if (deleted) {
+    return <InfoPage message={message} />;
+  }
 
   const { name, email, number, address, tag } = user;
 
   return (
     <div className="contact-page">
-      {/* {console.log(user)} */}
       <div className="contact-page-container">
         <div className="container">
           <h1>Contact Info</h1>
           <div className="image-name-container ">
-            <FaUserCircle className="user-info-icon" />
+            <FaUserCircle className="user-img-icon" />
             <h2>{name}</h2>
           </div>
 
@@ -70,7 +84,7 @@ function Contact() {
             <p>{tag ? tag : "No tag"}</p>
           </div>
           <div className="button-container">
-            <AiOutlineDelete className="button-icon" />
+            <AiOutlineDelete className="button-icon" onClick={handleDelete} />
             <MdFavoriteBorder className="button-icon" />
             <BsPencil className="button-icon" />
           </div>
