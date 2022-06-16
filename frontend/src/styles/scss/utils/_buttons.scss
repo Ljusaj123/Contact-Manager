@@ -1,0 +1,18 @@
+.back-btn {
+  margin-top: 3rem;
+  width: clamp(200px, 70%, 250px);
+  color: $clean-white;
+  background: none;
+  border: none;
+  background-color: $orange;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-size: clamp(1rem, 5.5vw, 1.3rem);
+  align-self: center;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
