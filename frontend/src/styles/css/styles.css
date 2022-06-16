@@ -56,6 +56,7 @@ p {
 
 a {
   text-decoration: none;
+  color: #eeeeee;
 }
 
 .home {
@@ -80,9 +81,15 @@ a {
   margin: 0 auto;
 }
 
-.not-found {
+.error-page {
   height: 100vh;
   width: 100vw;
+  padding: 2rem;
+}
+
+.error-page-container {
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,24 +105,17 @@ a {
           flex-direction: column;
 }
 
-.not-found .back-btn {
-  margin-top: 3rem;
-  width: clamp(200px, 70%, 350px);
-  color: #eeeeee;
-  background: none;
-  border: none;
-  background-color: #fd7014;
-  padding: 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  font-size: clamp(1rem, 5.5vw, 1.3rem);
-}
-
-.not-found .back-btn:active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+.error-page-container a {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contact-page {
@@ -163,33 +163,11 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.contact-page-container .container div {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  min-height: 15vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.contact-page-container .container div p {
-  margin-left: 1em;
+  min-height: 20vh;
+  padding: 1rem;
 }
 
 .contact-page-container .container .button-container {
@@ -203,23 +181,33 @@ a {
 }
 
 .contact-page-container .container .image-name-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid rgba(235, 225, 225, 0.432);
 }
 
-.contact-page-container .container .email-container,
-.contact-page-container .container .number-container,
-.contact-page-container .container .address-container,
-.contact-page-container .container .tag-container {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+@media screen and (max-width: 450px) {
+  .contact-page .contact-page-container .container > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-height: 10vh;
+  }
+  .contact-page .contact-page-container .container .button-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 header {
@@ -361,11 +349,16 @@ svg {
   transition: all 0.5s ease;
 }
 
+.info-icon {
+  font-size: clamp(6rem, 6.5vw, 11rem);
+  color: #fd7014;
+}
+
 .user-icon {
   font-size: clamp(2rem, 5.5vw, 3.5rem);
 }
 
-.user-info-icon {
+.user-img-icon {
   font-size: clamp(4rem, 5.5vw, 6rem);
 }
 
@@ -394,4 +387,27 @@ svg {
 .create-user-icon:active {
   -webkit-transform: scale(0.85);
           transform: scale(0.85);
+}
+
+.back-btn {
+  margin-top: 3rem;
+  width: clamp(200px, 70%, 250px);
+  color: #eeeeee;
+  background: none;
+  border: none;
+  background-color: #fd7014;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: clamp(1rem, 5.5vw, 1.3rem);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.back-btn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
