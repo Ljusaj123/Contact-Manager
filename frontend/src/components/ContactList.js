@@ -25,6 +25,11 @@ function ContactList() {
   if (error) {
     return <ErrorPage error={error} />;
   }
+  if (!data.length) {
+    return <h3>There are no contacts, make one!</h3>;
+  }
+
+  console.log(data);
 
   return (
     <div className="contact-list">
