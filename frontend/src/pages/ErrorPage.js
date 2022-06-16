@@ -9,7 +9,7 @@ function ErrorPage({ error }) {
   return (
     <div className="error-page">
       <div className="error-page-container">
-        <BiError className="error-icon" />
+        <BiError className="info-icon" />
         <h1>
           Error {status} - {statusText}
         </h1>
