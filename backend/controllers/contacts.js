@@ -12,7 +12,7 @@ export const getContact = async (req, res, next) => {
 
     const contacts = await Contact.findById(contactID);
     if (!contacts) {
-      throw new BadRequest(`contact does not exist with id ${contactID}`);
+      throw new BadRequest(`Contact does not exist with id ${contactID}`);
     }
     res.status(StatusCodes.OK).json({ contacts });
   } catch (error) {
@@ -25,9 +25,9 @@ export const deleteContact = async (req, res, next) => {
 
     const contacts = await Contact.findByIdAndRemove(contactID);
     if (!contacts) {
-      throw new BadRequest(`contact does not exist with id ${contactID}`);
+      throw new BadRequest(`Contact does not exist with id ${contactID}`);
     }
-    res.status(StatusCodes.OK).json(`contact with id ${contactID} is deleted`);
+    res.status(StatusCodes.OK).json(`Contact with id ${contactID} is deleted`);
   } catch (error) {
     next(error);
   }
@@ -41,7 +41,7 @@ export const updateContact = async (req, res, next) => {
       { new: true, runValidators: true }
     );
     if (!contacts) {
-      throw new BadRequest(`contact does not exist with id ${contactID}`);
+      throw new BadRequest(`Contact does not exist with id ${contactID}`);
     }
     res.status(StatusCodes.OK).json({ contacts });
   } catch (error) {
