@@ -2,7 +2,7 @@ svg {
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.error-icon {
+.info-icon {
   font-size: clamp(6rem, 6.5vw, 11rem);
   color: $orange;
 }
@@ -10,7 +10,7 @@ svg {
 .user-icon {
   font-size: clamp(2rem, 5.5vw, 3.5rem);
 }
-.user-info-icon {
+.user-img-icon {
   font-size: clamp(4rem, 5.5vw, 6rem);
 }
 
